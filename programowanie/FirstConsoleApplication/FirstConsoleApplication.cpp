@@ -1,350 +1,611 @@
-#include <iostream>
-
-using namespace std;
-
-//Napisz program, ktĂłry wczyta od uĹĽytkownika jego wiek a nastÄ™pnie wyĹ›wietli go na konsoli.
-
-void task1()
-{
-
-    short ageFromUser;
-
-    cout << "Podaj swoj wiek: ";
-    cin >> ageFromUser;
-
-    cout << "Masz" << ageFromUser << "lat.\n";
-}
-
-//StwĂłrz program, ktĂłry pobiera od uĹĽytkownika
-//dĹ‚ugoĹ›Ä‡ w metrach i przelicza jÄ… na centymetry
-//milimetry i kilometry. WyĹ›wietl wynik.
-
-void task2()
-{
-    float lengthInMeterFromUser;
-    cout << "Podaj dlugosc w metrach\n";
-    cin >> lengthInMeterFromUser;
-
-    float lengthIncentiMeterFromUser = lengthInMeterFromUser * 100;
-
-    cout << lengthInMeterFromUser << "metrow to\n" << lengthIncentiMeterFromUser << "cemtymetrow\n" << endl;
-
-    float lengthInMiliMeterFromUser = lengthInMeterFromUser * 1000;
-    cout << lengthInMeterFromUser << "metrow to\n" << lengthInMiliMeterFromUser << "milimetrow\n" << endl;
-
-    float lengthIniKiloMeterFromUser = lengthInMeterFromUser / 1000;
-    cout << lengthInMeterFromUser << "metrow to\n" << lengthIniKiloMeterFromUser << "kilometrow\n" << endl;
-}
+﻿#include <iostream>
 
 /*
+Piorytety operatorów:
+* /
++ -
+>< >= <= == !=
+&&
+||
+=
 
-* Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych. Następnie wykona operacje (+, -, *, /) i wyświetli wyniki.
+operatory porowania:
+> wiekszosci
+< mniejszosci
+>= wiekszy bądż rowny
+<= mniejszy bądż rowny
+== równe
+!= rózne
 
-* Napisz program, który poprosi użytkownika o podanie liczby sekund i przeliczy je na godziny i minuty, wyświetlając wynik.
+operatory logiczne:
 
-* Napisz program, który poprosi użytkownika o podanie współrzędnych (x1, y1) i (x2, y2) dwóch punktów w układzie kartezjańskim, a następnie obliczy odległość między nimi, wyświetlając wynik.
+|| or/lub
+&& and/i
+!  not/nie
 
-
+A     B           A||B  A && B        !A
+f     f            f            f            t
+f     t            t        f       
+t     f            t        f          f
+t     t            t        t
 */
 
-// Napisz program, który poprosi użytkownika o podanie długości boku a i b prostokąta, a następnie obliczy i wyświetli pole prostokąta.
+//Napisz program, który pobierze liczbę od uzytkownika i wyswietli czy jest ona dodatnia czy nie
+void task1()
+{
+	int number;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> number;
+
+	//wersja 1
+	if (number > 0)
+	{
+		std::cout << "Liczba jest dodatnia\n";
+	}
+
+	if (number <= 0)
+	{
+		std::cout << "liczba jest ujemna\n";
+	}
+
+	//wersja 2
+	if (number > 0)
+	{
+		std::cout << "Liczba jest dodatna\n";
+	}
+	else
+	{
+		std::cout << "liczba jest ujemna lub rowna zero\n";
+	}
+}
+
+//napisz program, który wczyta liczbe i sprawdzi czy jest ona z zakresu <1;10)
+void task2()
+{
+	int number;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> number;
+
+	if (number >= 1)
+	{
+		if (number < 10)
+		{
+			std::cout << "liczba nalezy do przedziału\n";
+		}
+		else
+		{
+			std::cout << "liczba nie nalezy do przedziału\n";
+		}
+	}
+	else
+	{
+		std::cout << "liczba nie jest w przedziale\n";
+	}
+
+	//wersja2
+	if (number >= 1 && number < 10)
+	{
+		std::cout << " liczba jest w zakresie\n";
+	}
+	else
+	{
+		std::cout << " liczba nie jest w zakresie\n";
+	}
+}
+
+//napisz program, który wczyta jedną liczbe i wyswietli wieksza z nich
 void task3()
 {
-    int side_a, side_b;
+	int firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
 
-    cout << "Podaj dlugość boku A:";
-    cin >> side_a;
-
-    cout << "Podaj dlugość boku B:";
-    cin >> side_b;
-
-    int area_rectangle = side_a * side_b;
-    cout << "Pole prostokąta o bokach: " << side_a << " i " << side_b << " wynosi " << area_rectangle << endl;
+	std::cout << "Najwieksza wartosc to " << firstNumber << "\n";
 }
 
-//Napisz program, który poprosi użytkownika o podanie długości podstawy i wysokości trójkąta, a następnie obliczy pole tego trójkąta, wyświetlając wynik.
-
+//napisz program, który wczyta dwie liczby i wyswietli wieksza z nich
 void task4()
 {
-    int base_triangle, height_triangle;
+	int secondNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> secondNumber;
+	int firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
 
-    cout << "Podaj długość podstawy: ";
-    cin >> base_triangle;
-
-    cout << "Podaj wysokość trójkąta: ";
-    cin >> height_triangle;
-
-    int area_triangle = base_triangle * height_triangle;
-    cout << "Pole trójkąta o podstawie " << base_triangle << " i wysokości " << height_triangle << " jest równe: " << area_triangle;
+	if (secondNumber > firstNumber)
+		std::cout << "Najwieksza wartosc to" << secondNumber << "\n";
+	else
+		std::cout << "Najwieksza wartosc to" << firstNumber << "\n";
 }
 
-//Napisz program, który poprosi użytkownika o podanie promienia koła i obliczy pole tego koła, wyświetlając wynik.
-
+//napisz program, który wczyta trzy liczby i wyswietli wieksza z nich
 void task5()
 {
-    float PI_number, Circle_radius;
-    PI_number = 3.14159;
+	int secondNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> secondNumber;
+	int firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
+	int thirdNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> thirdNumber;
 
-    cout << "Podaj promień koła: ";
-    cin >> Circle_radius;
-
-    float area_wheels = PI_number * Circle_radius;
-    cout << "Pole koła o promieniu: " << Circle_radius << " jest równe " << area_wheels << endl;
-
+	if (thirdNumber > firstNumber && thirdNumber > secondNumber)
+		std::cout << "Najwieksza wartosc to" << thirdNumber << "\n";
+	else
+	{
+		if (thirdNumber > firstNumber && thirdNumber > secondNumber)
+			std::cout << "Najwieksza wartosc to" << secondNumber << "\n";
+		else
+			std::cout << "Najwieksza wartosc to" << firstNumber << "\n";
+	}
 }
-
-//Napisz program, który poprosi użytkownika o podanie długości podstawy a, podstawy b i wysokości h trapezu, a następnie obliczy pole tego trapezu, wyświetlając wynik.
 
 void task6()
 {
-    int base_a, base_b, height_h;
+	int firstNumber, secondNumber, thirdNumber, fourthNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> thirdNumber;
+	std::cout << "podaj liczbe\n";
+	std::cin >> fourthNumber;
 
-    cout << "Podaj długość podstawy A: ";
-    cin >> base_a;
-
-    cout << "Podaj długość podstawy B: ";
-    cin >> base_b;
-
-    cout << "Podaj wysokość trójkąta: ";
-    cin >> height_h;
-
-    int area_trapeze = (base_a + base_b) * height_h / 2;
-    cout << "Pole trapezu o podstawie A " << base_a << ", podstawie B " << base_b << " i wysokości " << height_h << " równa się: " << area_trapeze << endl;
+	if (fourthNumber > firstNumber
+		&& fourthNumber > secondNumber
+		&& fourthNumber > thirdNumber)
+		std::cout << "Najwieksza wartosc to" << fourthNumber << "\n";
+	else
+	{
+		if (thirdNumber > firstNumber && thirdNumber > secondNumber)
+			std::cout << "Najwieksza wartosc to" << thirdNumber << "\n";
+		else
+		{
+			if (thirdNumber > firstNumber && thirdNumber > secondNumber)
+				std::cout << "Najwieksza wartosc to" << secondNumber << "\n";
+			else
+				std::cout << "Najwieksza wartosc to" << firstNumber << "\n";
+		}
+	}
 }
 
-//Napisz program, który poprosi użytkownika o podanie długości krawędzi sześcianu i obliczy jego objętość, wyświetlając wynik.
-
+//Napisz program który wczyta jedną liczby i wyswieli je w kolejnosci rosnącej
 void task7()
 {
-    int length_of_the_edge_of_the_cube;
+	int firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
 
-    cout << "Podaj długość krawędzi sześcianiu: ";
-    cin >> length_of_the_edge_of_the_cube;
+	std::cout << "Liczby w kolejnosci rosnącej:\n";
+	std::cout << firstNumber;
 
-    int volume_cube = length_of_the_edge_of_the_cube * length_of_the_edge_of_the_cube * length_of_the_edge_of_the_cube;
-    cout << "Sześcian o długości krawędzi: " << length_of_the_edge_of_the_cube << " Wynosi: " << volume_cube << endl;
+	std::cout << "\n";
+
 }
 
-//Napisz program, który poprosi użytkownika o podanie temperatury w stopniach Celsiusza, a następnie przeliczy ją na stopnie Fahrenheita i wyświetli wynik.
-
+//Napisz program który wczyta dwie liczby i wyswieli je w kolejnosci rosnącej
 void task8()
 {
-    int temperature_C;
 
-    cout << "Podaj temperaturę w stopniach celsjusza: ";
-    cin >> temperature_C;
+	int firstNumber, secondNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbe\n";
 
-    int temperature_F = (temperature_C * 9 / 5) + 32;
-    cout << temperature_C << " stopni celsjusza to: " << temperature_F << " °F" << endl;
+	std::cout << "Liczby w kolejnosci rosnącej:\n";
+
+	if (firstNumber > secondNumber)
+		std::cout << secondNumber << ", " << firstNumber;
+	else
+		std::cout << firstNumber << ", " << secondNumber;
+
+	std::cout << "\n";
+
 }
 
-//Napisz program, który konwertuje wprowadzoną kwotę w jednej walucie na inną, korzystając z określonego kursu wymiany.
-
+//Napisz program który wczyta trzy liczby i wyswieli je w kolejnosci rosnącej
 void task9()
 {
-    float pln;
+	int firstNumber, secondNumber, thirdNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbe\n";
+	std::cin >> thirdNumber;
 
-    cout << "Wartość w złotówkach: ";
-    cin >> pln;
-
-    float funt = pln / 5.08;
-    float euro = pln / 4.43;
-    float dolar = pln / 4.14;
-
-    cout << pln << " zł to " << funt << "funtów" << endl;
-    cout << pln << " zł to " << euro << "euro" << endl;
-    cout << pln << " zł to " << dolar << "dolarów" << endl;
+	std::cout << "liczby w kolejnosci rosnącej:\n";
+	if (thirdNumber < firstNumber
+		&& thirdNumber < secondNumber)
+	{
+		std::cout << thirdNumber << ", ";
+		if (secondNumber < firstNumber)
+			std::cout << secondNumber << " ," << firstNumber;
+		else
+			std::cout << firstNumber << " ," << secondNumber;
+	}
+	else
+	{
+		if (secondNumber < firstNumber)
+		{
+			std::cout << secondNumber << " ,";
+			if (thirdNumber < firstNumber)
+				std::cout << thirdNumber << " , ";
+			else
+				std::cout << firstNumber << " ," << thirdNumber;
+		}
+		else
+		{
+			std::cout << firstNumber << " ," << thirdNumber;
+			if (thirdNumber < secondNumber)
+				std::cout << thirdNumber << " ," << secondNumber;
+			else
+				std::cout << secondNumber << ", " << thirdNumber;
+		}
+	}
+	std::cout << "\n";
 }
 
-//Napisz program, który poprosi użytkownika o podanie dwóch liczb (a, b) i obliczy średnią arytmetyczną tych liczb. Następnie wyświetli wynik.
 
-void task10()
-{
-    float a, b;
-    cout << "Podaj liczbę pierwszą (A): ";
-    cin >> a;
-
-    cout << "Podaj liczbę drugą (B): ";
-    cin >> b;
-
-    float average = (a + b) / 2;
-    cout << "Średnia artymetyczna liczb: " << a << " i " << b << " jest równa: " << average;
-}
-
-//Napisz program, który poprosi użytkownika o podanie trzech liczb(a, b, c) i obliczy średnią arytmetyczną tych liczb.Następnie wyświetli wynik.
-
-void task11()
-{
-    float a, b, c;
-
-    cout << "Podaj pierwszą liczbę (a): ";
-    cin >> a;
-
-    cout << "Podaj drugą liczbę (b): ";
-    cin >> b;
-
-    cout << "Podaj drugą liczbę (c): ";
-    cin >> c;
-
-    float mean;
-    mean = (a + b + c) / 3;
-    cout << "Średnia artymetyczna liczby: " << a << ", liczby " << b << " i liczby " << c << " jest równa " << mean << endl;
-}
-
-//Napisz program, obliczający średnią ważoną trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3.
-
-void task12()
-{
-    float number_1, number_2;
-    float number_3, w1, w2, w3;
-
-    cout << "Podaj liczbę pierwszą: ";
-    cin >> number_1;
-
-    cout << "Podaj liczbę drugą: ";
-    cin >> number_2;
-
-    cout << "Podaj liczbę trzecią: ";
-    cin >> number_3;
-
-    cout << "Podaj wagę pierwszej liczby wagę: ";
-    cin >> w1;
-
-    cout << "Podaj wagę drugiej wagę: ";
-    cin >> w2;
-
-    cout << "Podaj wagę trzeciej wagę: ";
-    cin >> w3;
-
-    float average_weight;
-    average_weight = (number_1 * w1 + number_2 * w2 + number_3 * w3) / (w1 + w2 + w3);
-    cout << "Średnia wag to: " << average_weight << endl;
-}
-
-//Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych.Następnie wykona operacje(+, -, *, / ) i wyświetli wyniki.
-
-void task13()
-{
-    int number_one, number_two;
-
-    cout << "Podaj liczbe 1: ";
-    cin >> number_one;
-
-    cout << "Podaj liczbe 2: ";
-    cin >> number_two;
-
-    int operation_1 = number_one + number_two;
-    int operation_2 = number_one - number_two;
-    int operation_3 = number_one * number_two;
-    int operation_4 = number_one / number_two;
-
-    cout << "Operacja 1 (+): " << operation_1 << "\nOperacja 2 (-): " << operation_2 << "\nOperacja 3 (*): " << operation_3 << "\nOperacja 4 (/): " << operation_4 << endl;
-}
-
-void task14()
-{
-    float s, min, h;
-
-    cout << "Podaj liczbę sekund: ";
-    cin >> s;
-
-    min = s / 60;
-    h = s / 3600;
-
-    cout << s << " sekund to: \n" << min << " minut \n" << h << "godzin" << endl;
-}
-
-//Napisz program, który poprosi użytkownika o podanie współrzędnych(x1, y1) i(x2, y2) dwóch punktów w układzie kartezjańskim, a następnie obliczy odległość między nimi, wyświetlając wynik.
-
-void task15()
-{
-    int x1, y1;
-    cout << "Podaj współrzędne punktu A (x1, y1): ";
-    cin >> x1 >> y1;
-
-    int x2, y2;
-    cout << "Podaj wspolrzedne punktu B (x2 y2): ";
-    cin >> x2 >> y2;
-
-    double distance;
-    distance = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-    cout << "Odległość między punktami A i B wynosi: " << distance << endl;
-}
-
-int main()
-{
-    setlocale(LC_CTYPE, "polish");
-    //task1();
-    //task2();
-    //task3();
-    //task4();
-    //task5();
-    //task6();
-    //task7();
-    //task8();
-    //task9();
-    //task10();
-    //task11();
-    //task12();
-    //task13();
-    //task14();
-    //task15();
-
-    return 0;
-}
 
 
 /*
+* Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i sprawdzi, czy są one równe. Wyświetl odpowiedni komunikat.
+* Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi, czy jest ona parzysta. Wyświetl odpowiedni komunikat.
+* Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyświetl odpowiedni komunikat.
 
-<<<<<<< HEAD
-    Algorytm - skończony zbiór instrukcji realizujący postawione przed nim zadanie.
-    Kolejność instrukcji w zbiorze jest określona.
-=======
-    Algorytm - zbiĂłr instrukcji realizujÄ…cy postawione przed nim zadanie.
->>>>>>> 41dc9cc6617836b9d94098020bf24d87057ab1a2
-    Sposoby zapisu:
-    * w punktach
-    * opis sĹ‚owny
-    * jÄ™zyk programowania lub pseudokod
-    * zbiĂłr rysunkĂłw
-    * schemat blokowy
+* Napisz program, który poprosi użytkownika o podanie masy ciała (w kilogramach) i wzrostu (w metrach).
+Na podstawie tych danych oblicz wskaźnik BMI (Body Mass Index) i wyświetl odpowiedni komunikat informujący o stanie zdrowia.
+BMI = masa/wzrost^2
+poniżej 16 - wygłodzenie
+16 - 16.99 - wychudzenie
+17 - 18.49 - niedowagę
+18.5 - 24.99 - wagę prawidłową
+25.0 - 29.9 - nadwagę
+30.0 - 34.99 - I stopień otyłości
+35.0 - 39.99 - II stopień otyłości
+powyżej 40.0 - otyłość skrajną
 
-    Zmienna - jest to powien obszar w pamiÄ™ci, sĹ‚ĂłĹĽÄ…cy do przechowywania danych. Te dane moĹĽna modyfikowaÄ‡.
-    Zmienna pozwala przechowaÄ‡ tylko jednÄ… wartoĹ›Ä‡ w danym momencie czasu.
+* Napisz program, który poprosi użytkownika o podanie liczby od 1 do 7 i wyświetli odpowiadający mu dzień tygodnia.
+* Napisz program, który wczyta numer miesiąca i wyświetli jego słowny odpowiednik.
+* Napisz program, który poprosi użytkownika o podanie roku i sprawdzi, czy jest to rok przestępny. Wyświetl odpowiedni komunikat.
+* Napisz program, który poprosi użytkownika o podanie liczby całkowitej i obliczy jej wartość bezwzględną. Wyświetl wynik.
+* Napisz program, który poprosi użytkownika o podanie wieku i sprawdzi, czy osoba jest pełnoletnia. Wyświetl odpowiedni komunikat.
+* Napisz program, który poprosi użytkownika o podanie długości trzech odcinków i sprawdzi, czy można zbudować z nich trójkąt. Wyświetl odpowiedni komunikat.
+* Napisz program, który poprosi użytkownika o podanie oceny w skali 100-punktowej i przeliczy ją na ocenę procentową w przedziale od 0 do 100. Wyświetl wynik.
+* Program wyświetlający odpowiedni komunikat w zależności od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
+* Napisz program, który na podstawie współczynników równania kwadratowego (a, b, c) sprawdzi, czy to równanie ma rozwiązania rzeczywiste, i jeśli tak, to je obliczy.
+* Program sprawdzający czy podana data jest poprawna (np. sprawdzając, czy dzień jest z zakresu od 1 do 31, miesiąc od 1 do 12 itd.)
 
-    Deklaracja zmiennej - moment jej utworzenia
 
-    typ_zmiennej oraz nazwa_zmiennej;
-
-    Typ zmiennej - mĂłwi o wielkoĹ›ci obszaru w pamiÄ™ci i o rodzaju przechowywanych danych.
-
-    short         liczby caĹ‚kowite ze znakiem 2  bajty  <-32 768; 32 767>
-    int/long      liczby caĹ‚kowite ze znakiem 4 bajty  <-2 147 483 648; 2 147 483 647>
-    long long     liczby caĹ‚kowite ze znakiem 8 bajty <-9 223 372 036 854 775 808, 9 223 372 036 854 775 807>
-
-    JeĹĽeli przed powyĹĽszymi typami dodamy sĹ‚owo "unsigned" to zakres jest od zero do podwojnego zakresu gĂłrnego
-
-    float         liczby rzeczywiste ze znakiem 4 bajty
-    double        liczby rzeczywiste ze znakiem 8 bajtĂłw
-    long double   liczby rzeczywiste ze znakiem 12 bajtĂłw
-
-    Nazwa zmiennej - nazwa obszaru w pamiÄ™ci. Poprzez ta nazwÄ™ odwoĹ‚ujemy siÄ™ do tego obszaru.
-
-    Wymagania kompilatora wzglÄ™dem nazwy:
-    * uzycie tylko dozwolonych znakĂłw
-    -  alfabet angielski a-z oraz A-Z
-    -  cyfry arabskie 0-9
-    -  podkreĹ›lenie (podĹ‚oga) _
-    * pierwszym znakiem nie moĹĽe byÄ‡ cyfra
-    * nie moĹĽe byÄ‡ sĹ‚owo kluczowe danego jÄ™zyka programowania
-    * musi byÄ‡ unikalna w danej widocznoĹ›ci
-
-    Wymagania programistĂłw:
-    * jeĹ›li nazwa skĹ‚ada siÄ™ z wielu wyrazĂłw to zamiast spacji:
-    - uĹĽywamy znaku podkreĹ›lenia np. first_number_from_user
-    - stosujemy camel case, czyli piszemy wszystko razem a sĹ‚owa (zaczynamy od drugiego)
-    zaczynamy z duĹĽej litery np. firstNumberFromUser
-    * nazwa zmiennej musi oddawaÄ‡ charakter przechowanych danych, czyli mieÄ‡ znaczenie
-    * nazwy po angielsku !!!
 
 */
+
+
+
+//Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i sprawdzi, czy są one równe.Wyświetl odpowiedni komunikat.
+
+void task10()
+{
+	int firstNumber, secondNumber;
+	std::cout << "podaj liczbe\n";
+	std::cin >> firstNumber;
+
+	std::cout << "podaj liczbe\n";
+	std::cin >> secondNumber;
+
+	if (secondNumber == firstNumber)
+		std::cout << "liczby sa takie same";
+	else
+		std::cout << "liczby nie sa takie same";
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi, czy jest ona parzysta.Wyświetl odpowiedni komunikat.
+void task11()
+{
+	int number;
+	std::cout << "podaj liczbe\n";
+	std::cin >> number;
+
+	int rest = number % 2;
+
+	if (rest == 0)
+		std::cout << "liczba jest parzysta\n";
+	else
+		std::cout << "liczba nie jest parzysta\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyświetl odpowiedni komunikat.
+void task12()
+{
+	int number;
+	std::cout << "podaj liczbe\n";
+	std::cin >> number;
+
+	int rest1 = number % 3;
+
+	if (rest1 == 0)
+		std::cout << "liczba jest podzielna przez 3\n";
+	else
+		std::cout << "liczba nie jest podzielna przez 3\n";
+	int rest2 = number % 5;
+
+	if (rest2 == 0)
+		std::cout << "liczba jest podzielna przez 5\n";
+	else
+		std::cout << "liczba nie jest podzielna przez 5\n";
+}
+
+/*Napisz program, który poprosi użytkownika o podanie masy ciała(w kilogramach) i wzrostu(w metrach).
+Na podstawie tych danych oblicz wskaźnik BMI(Body Mass Index) i wyświetl odpowiedni komunikat informujący o stanie zdrowia.
+BMI = masa / wzrost ^ 2
+poniżej 16 - wygłodzenie
+16 - 16.99 - wychudzenie
+17 - 18.49 - niedowagę
+18.5 - 24.99 - wagę prawidłową
+25.0 - 29.9 - nadwagę
+30.0 - 34.99 - I stopień otyłości
+35.0 - 39.99 - II stopień otyłości
+powyżej 40.0 - otyłość skrajną
+*/
+
+void task13()
+{
+	double weight, height, bmi;
+	std::cout << "podaj swój wzrost w metrach\n";
+	std::cin >> height;
+	std::cout << "podaj swoją wage\n";
+	std::cin >> weight;
+
+	bmi = weight / (height * height);
+	std::cout << "\n";
+	std::cout << "twoje bmi wynosi:" << bmi << "\n";
+
+	if (bmi <= 15.99)
+	{
+		std::cout << "wygłodzenie";
+	}
+	else
+	{
+		if (bmi >= 16 && bmi <= 16.99)
+		{
+			std::cout << "wychudzenie";
+		}
+		else
+		{
+			if (bmi >= 17 && bmi <= 18.49)
+			{
+				std::cout << "niedowagę";
+			}
+			else
+			{
+				if (bmi >= 18.5 && bmi <= 24.99)
+				{
+					std::cout << "wagę prawidłową";
+				}
+				else
+				{
+					if (bmi >= 25 && bmi <= 29.9)
+					{
+						std::cout << "nadwagę";
+					}
+					else
+					{
+						if (bmi >= 30 && bmi <= 34.9)
+						{
+							std::cout << "I stopień otyłości";
+						}
+						else
+						{
+							if (bmi >= 35.0 && bmi <= 39.99)
+							{
+								std::cout << "II stopień otyłości";
+							}
+							else
+							{
+								if (bmi >= 35.0 && bmi <= 40.0)
+								{
+									std::cout << "otyłość skrajną";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*Napisz program, który poprosi użytkownika o podanie liczby od 1 do 7 i wyświetli odpowiadający mu dzień tygodnia.*/
+void task14()
+{
+	int dayOfTheWeek;
+	std::cout << "podaj liczbe\n";
+	std::cin >> dayOfTheWeek;
+
+	if (dayOfTheWeek == 1)
+	{
+		std::cout << "poniedziałek";
+	}
+	else
+	{
+		if (dayOfTheWeek == 2)
+		{
+			std::cout << "wtorek";
+		}
+		else
+		{
+			if (dayOfTheWeek == 3)
+			{
+				std::cout << "sroda";
+			}
+			else
+			{
+				if (dayOfTheWeek == 4)
+				{
+					std::cout << "czwartek";
+				}
+				else
+				{
+					if (dayOfTheWeek == 5)
+					{
+						std::cout << "piątek";
+					}
+					else
+					{
+						if (dayOfTheWeek == 6)
+						{
+							std::cout << "sobota";
+						}
+						else
+						{
+							if (dayOfTheWeek == 7)
+							{
+								std::cout << "niedziela";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*Napisz program, który wczyta numer miesiąca i wyświetli jego słowny odpowiednik.*/
+void task15()
+{
+	int mounth;
+	std::cout << "podaj liczbe\n";
+	std::cin >> mounth;
+
+	if (mounth == 1)
+	{
+		std::cout << "styczen";
+	}
+	else
+	{
+		if (mounth == 2)
+		{
+			std::cout << "luty";
+		}
+		else
+		{
+			if (mounth == 3)
+			{
+				std::cout << "marzec";
+			}
+			else
+			{
+				if (mounth == 4)
+				{
+					std::cout << "kwiecien";
+				}
+				else
+				{
+					if (mounth == 5)
+					{
+						std::cout << "maj";
+					}
+					else
+					{
+						if (mounth == 6)
+						{
+							std::cout << "czerwiec";
+						}
+						else
+						{
+							if (mounth == 7)
+							{
+								std::cout << "lipiec";
+							}
+							else
+							{
+								if (mounth == 8)
+								{
+									std::cout << "sierpien";
+								}
+								else
+								{
+									if (mounth == 9)
+									{
+										std::cout << "wrzesien";
+									}
+									else
+									{
+										if (mounth == 10)
+										{
+											std::cout << "padziernik";
+										}
+										else
+										{
+											if (mounth == 11)
+											{
+												std::cout << "listopad";
+											}
+											else
+											{
+												if (mounth == 12)
+												{
+													std::cout << "grudzien";
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*Napisz program, który poprosi użytkownika o podanie roku i sprawdzi, czy jest to rok przestępny.Wyświetl odpowiedni komunikat.*/
+void task16()
+{
+	int rok;
+	std::cout << "podaj rok\n";
+	std::cin >> rok;
+
+	int rest = rok % 4;
+
+	if (rest == 0)
+		std::cout << "rok jest przestepny\n";
+	else
+		std::cout << "rok nie jest przestepny\n";
+}
+
+/*Napisz program, który poprosi użytkownika o podanie liczby całkowitej i obliczy jej wartość bezwzględną.Wyświetl wynik.*/
+void task17()
+{
+
+}
+
+/* Napisz program, który poprosi użytkownika o podanie wieku i sprawdzi, czy osoba jest pełnoletnia. Wyświetl odpowiedni komunikat.*/
+
+int main()
+{
+	//task1();
+	//task2();
+	//task3();
+	//task4();
+	//task5();
+	//task6();
+	//task7();
+	//task8();
+	//task9();
+	//task10();
+	//task11();
+	//task12();
+	//task13();
+	//task14();
+	//task15();
+	//task16();
+	task17();
+}
