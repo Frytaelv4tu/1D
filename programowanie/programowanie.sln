@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.7.34024.191
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstConsoleApplication", "FirstConsoleApplication\FirstConsoleApplication.vcxproj", "{77BB2015-290B-41E0-BAAE-2AEB69604250}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstConsoleApplication", "FirstConsoleApplication\FirstConsoleApplication.vcxproj", "{232CF6EF-0323-4165-83A6-D81A8600EFC8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VariableConsoleApplication", "VariableConsoleApplication\VariableConsoleApplication.vcxproj", "{EB5FDBE9-3001-4F45-B1FA-38A62208030F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Podstawy", "01. Podstawy", "{00604E83-B6E3-4F3C-A918-7AF52839AABC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Instrukcje decyzyjne", "02. Instrukcje decyzyjne", "{D34814E8-7FB2-4804-9BC3-367A0E8460FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InstructionIfConsoleApplication", "InstructionIfConsoleApplication\InstructionIfConsoleApplication.vcxproj", "{2422C97F-C835-44CA-829A-3B5DA43990EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +21,40 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Debug|x64.ActiveCfg = Debug|x64
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Debug|x64.Build.0 = Debug|x64
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Debug|x86.ActiveCfg = Debug|Win32
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Debug|x86.Build.0 = Debug|Win32
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Release|x64.ActiveCfg = Release|x64
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Release|x64.Build.0 = Release|x64
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Release|x86.ActiveCfg = Release|Win32
-		{77BB2015-290B-41E0-BAAE-2AEB69604250}.Release|x86.Build.0 = Release|Win32
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Debug|x64.ActiveCfg = Debug|x64
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Debug|x64.Build.0 = Debug|x64
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Debug|x86.ActiveCfg = Debug|Win32
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Debug|x86.Build.0 = Debug|Win32
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Release|x64.ActiveCfg = Release|x64
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Release|x64.Build.0 = Release|x64
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Release|x86.ActiveCfg = Release|Win32
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8}.Release|x86.Build.0 = Release|Win32
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Debug|x64.ActiveCfg = Debug|x64
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Debug|x64.Build.0 = Debug|x64
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Debug|x86.ActiveCfg = Debug|Win32
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Debug|x86.Build.0 = Debug|Win32
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Release|x64.ActiveCfg = Release|x64
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Release|x64.Build.0 = Release|x64
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Release|x86.ActiveCfg = Release|Win32
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F}.Release|x86.Build.0 = Release|Win32
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Debug|x64.ActiveCfg = Debug|x64
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Debug|x64.Build.0 = Debug|x64
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Debug|x86.Build.0 = Debug|Win32
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Release|x64.ActiveCfg = Release|x64
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Release|x64.Build.0 = Release|x64
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Release|x86.ActiveCfg = Release|Win32
+		{2422C97F-C835-44CA-829A-3B5DA43990EA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{232CF6EF-0323-4165-83A6-D81A8600EFC8} = {00604E83-B6E3-4F3C-A918-7AF52839AABC}
+		{EB5FDBE9-3001-4F45-B1FA-38A62208030F} = {00604E83-B6E3-4F3C-A918-7AF52839AABC}
+		{2422C97F-C835-44CA-829A-3B5DA43990EA} = {D34814E8-7FB2-4804-9BC3-367A0E8460FE}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2C810573-273E-4265-9CAF-77E5BAAA3B23}
+		SolutionGuid = {83F8EF81-3781-492D-8632-2687376FEE0F}
 	EndGlobalSection
 EndGlobal
